@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profilul profesional al managerului școlar</title>
+<meta name="description" content="Platformă de studiu pentru Profilul profesional al managerului școlar – OMEC nr. 3.934/18.05.2026">
+<style>
+:root{--bg:#f3f6fa;--panel:#fff;--ink:#1e2a38;--muted:#6d7988;--line:#dce4ed;--blue:#173d69;--blue2:#285f96;--gold:#e4aa48;--soft:#eef4fa;--green:#2d7b57;--red:#a44146;--shadow:0 10px 30px rgba(27,55,86,.08)}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)} button{font:inherit}
+header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px} .logo{width:42px;height:42px;border-radius:12px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
+.brand b{display:block} .brand small{color:var(--muted)} .wrap{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:calc(100vh - 67px)}
+aside{background:#fff;border-right:1px solid var(--line);padding:14px;position:sticky;top:67px;height:calc(100vh - 67px);overflow:auto}
+.navtitle{font-size:11px;font-weight:800;letter-spacing:.09em;color:var(--muted);padding:15px 10px 6px} .navbtn{display:block;width:100%;border:0;background:transparent;text-align:left;padding:10px;border-radius:9px;cursor:pointer;color:var(--ink);margin:2px 0} .navbtn:hover,.navbtn.active{background:var(--soft);color:var(--blue);font-weight:700}
+main{padding:25px;max-width:1250px;width:100%;margin:auto} .progressbox{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 14px;margin-bottom:18px} .prow{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px} .track{height:8px;background:var(--soft);border-radius:99px;overflow:hidden} .bar{height:100%;background:var(--gold);width:0;transition:.25s}
+.hero{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:22px;padding:38px;box-shadow:var(--shadow)} .hero h1{font-size:clamp(32px,5vw,58px);line-height:1.03;margin:5px 0 14px;max-width:900px} .hero p{font-size:17px;line-height:1.6;max-width:850px;opacity:.95} .kicker{font-size:12px;font-weight:800;letter-spacing:.12em}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px} .btn{border:1px solid var(--line);border-radius:9px;padding:10px 14px;cursor:pointer;background:#fff;color:var(--blue);font-weight:700} .btn.primary{background:var(--gold);border-color:var(--gold);color:#1c2733} .btn.done{background:var(--green);border-color:var(--green);color:#fff}
+h1{line-height:1.15} h2{margin-top:28px} .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px} .card{grid-column:span 4;background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow)} .card.wide{grid-column:span 6} .card.full{grid-column:1/-1} .card p,.muted{color:var(--muted);line-height:1.55} .num{font-size:33px;color:var(--gold);font-weight:900}
+.callout{background:var(--soft);border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;line-height:1.55;margin:14px 0} .pills{display:flex;flex-wrap:wrap;gap:7px} .pill{font-size:13px;background:var(--soft);border-radius:99px;padding:7px 10px}
+.lesson{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:var(--shadow)} .lessonhead{display:flex;justify-content:space-between;gap:15px;align-items:start} .lesson h3{margin:0 0 7px} .lesson ol{padding-left:22px} .lesson li{margin:7px 0;line-height:1.48} .lessonactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+table{border-collapse:collapse;width:100%;background:#fff} th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top} th{background:var(--soft)}
+.qbox{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;margin:13px 0} .option{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px;margin:7px 0;cursor:pointer} .option.ok{background:#e9f5ee;border-color:var(--green)} .option.bad{background:#faeded;border-color:var(--red)} .score{font-size:30px;font-weight:900;color:var(--blue)}
+.menu{display:none;position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;border:0;border-radius:50%;background:var(--blue);color:#fff;font-size:22px} .note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:28px}
+@media(max-width:900px){.wrap{display:block} aside{position:fixed;left:0;top:67px;bottom:0;width:280px;transform:translateX(-105%);transition:.2s;z-index:50;box-shadow:var(--shadow)} aside.open{transform:none} .menu{display:block} main{padding:18px} .card,.card.wide{grid-column:span 6}}
+@media(max-width:600px){header{padding:10px} .brand b{font-size:12px} .brand small{font-size:10px} .card,.card.wide{grid-column:1/-1} .hero{padding:25px} .lessonhead{display:block}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">PM</div><div><b>Profilul profesional al managerului școlar</b><small>OMEC nr. 3.934/18.05.2026</small></div></div>
+</header>
+
+<div class="wrap">
+<aside id="side">
+  <button class="navbtn active" data-page="home">🏠 Acasă</button>
+  <button class="navbtn" data-page="context">📘 Context</button>
+  <button class="navbtn" data-page="values">🧭 Valori fundamentale</button>
+  <button class="navbtn" data-page="transversal">🧠 Competențe transversale</button>
+  <div class="navtitle">CELE 5 DOMENII</div>
+  <button class="navbtn" data-page="d1">1. Leadership și strategie</button>
+  <button class="navbtn" data-page="d2">2. Management operațional</button>
+  <button class="navbtn" data-page="d3">3. Calitate și evaluare</button>
+  <button class="navbtn" data-page="d4">4. Curriculum și profesori</button>
+  <button class="navbtn" data-page="d5">5. Comunicare și comunitate</button>
+  <div class="navtitle">FIXARE</div>
+  <button class="navbtn" data-page="map">🗺️ Harta profilului</button>
+  <button class="navbtn" data-page="review">⚡ Recapitulare</button>
+  <button class="navbtn" data-page="quiz">✅ Test final</button>
+</aside>
+
+<main>
+  <div class="progressbox"><div class="prow"><span>Progresul meu</span><strong id="ptxt">0/20 • 0%</strong></div><div class="track"><div class="bar" id="pbar"></div></div></div>
+  <div id="app"></div>
+</main>
+</div>
+<button class="menu" id="menu" aria-label="Meniu">☰</button>
+
+<script>
+const DATA = {"domains": [{"id": 1, "title": "Leadership educațional, guvernanță instituțională și orientare strategică", "general": "Asigură orientarea strategică a instituției spre învățare și progresul fiecărui elev, aliniază politica educațională, curriculumul și resursele și dezvoltă o cultură incluzivă, sigură și orientată spre rezultate.", "competencies": [["1.1", "Managementul schimbării, adaptare și gestionarea presiunilor", ["proiectează și planifică procese de schimbare pe baza analizei contextului instituțional", "definește obiectivele schimbării în termeni specifici, măsurabili și comunicabili echipei", "facilitează planificarea participativă pentru o viziune comună asupra transformării", "gestionează rezistența la schimbare prin dialog deschis și argumente centrate pe beneficiile elevilor", "monitorizează progresul transformării și ajustează strategiile pe baza feedbackului", "consolidează noile practici prin reguli, proceduri și rutine instituționale", "utilizează metodologii recunoscute de management al schimbării, inclusiv cicluri PDCA"]], ["1.2", "Dezvoltare și transformare organizațională", ["consultă și implică profesori, elevi și părinți în inițiative de îmbunătățire instituțională", "conduce procese de inovare instituțională și adoptă decizii fundamentate pe date", "dezvoltă capacitatea organizației de a răspunde schimbărilor și nevoilor comunității școlare"]], ["1.3", "Leadership incluziv, stare de bine a elevilor și a personalului școlii, securitate și siguranță școlară", ["creează și întreține un climat în care elevii se simt protejați, respectați și valorizați", "implementează și monitorizează protocoalele de siguranță fizică și procedurile de urgență", "asigură funcționarea mecanismelor antihărțuire și antibullying și intervine prompt în situații de criză", "promovează măsuri de protecție a copilului", "monitorizează indicatori ai climatului școlar și acționează pe baza lor", "sprijină personalul și elevii în perioade de stres și situații dificile", "inspiră încredere și gestionează echipe diverse printr-un stil empatic și participativ"]], ["1.4", "Aderarea la principii și valori", ["se comportă aliniat cu valorile instituționale și etica profesională", "actualizează și comunică explicit viziunea și misiunea instituțională", "ia decizii responsabile și argumentate pe baza consultării comunității școlare", "aplică codul de etică și gestionează profesionist procedurile disciplinare", "ia măsuri pentru prevenirea abuzurilor, favoritismului și conflictelor de interese", "demonstrează imparțialitate și transparență în relațiile instituționale", "argumentează deciziile pe baza interesului superior al copilului"]]]}, {"id": 2, "title": "Management operațional administrativ-financiar și conformitate", "general": "Administrează responsabil și eficient resursele instituției, asigurând conformitatea legală, integritatea decizională și transparența utilizării fondurilor publice; anticipează și gestionează riscuri și situații de criză.", "competencies": [["2.1", "Conformitate juridică și etică profesională", ["coordonează managementul operațional al unității", "coordonează managementul financiar: elaborarea bugetului și execuția bugetară", "identifică, organizează și asigură disponibilitatea resurselor pentru obiectivele de performanță", "aplică normele legale și procedurale în deciziile administrative", "documentează și arhivează deciziile financiare și administrative", "asigură respectarea procedurilor de achiziții publice", "evită prompt și transparent conflictele de interese", "gestionează eficient resursele materiale și financiare"]], ["2.2", "Reziliență și managementul riscului", ["identifică și evaluează sistematic riscurile organizaționale", "elaborează planuri de continuitate și intervenție pentru situații de criză", "instituie mecanisme de control intern și de prevenire a riscurilor", "comunică rapid și clar în situații critice, menținând funcționarea instituției", "evaluează impactul crizelor și ia măsuri de remediere", "revizuiește procedurile pe baza lecțiilor învățate"]], ["2.3", "Identitate digitală, inovare și eficiență managerială", ["utilizează platforme digitale și instrumente de management informațional", "monitorizează sistematic progresul în atingerea obiectivelor de performanță", "sprijină transformarea digitală a școlii și dezvoltarea competențelor digitale ale personalului", "asigură securitatea datelor și conformitatea cu normele GDPR", "introduce soluții digitale inovatoare validate și evaluează impactul lor asupra eficienței instituționale"]], ["2.4", "Prezentarea și comunicarea informațiilor", ["prezintă informațiile manageriale clar, coerent și adaptat destinatarilor", "utilizează date și documente pentru fundamentarea comunicării", "asigură transparența și trasabilitatea informațiilor relevante"]]]}, {"id": 3, "title": "Managementul calității și evaluare internă", "general": "Proiectează și implementează mecanisme sistemice de monitorizare, evaluare și îmbunătățire continuă, folosind date și indicatori relevanți pentru fundamentarea deciziilor și creșterea performanței organizaționale.", "competencies": [["3.1", "Monitorizare, evaluare internă și raportare", ["implementează standardele Agenției Române de Asigurare a Calității în Învățământul Preuniversitar (ARACIP) și monitorizează respectarea lor", "creează mecanisme de monitorizare și raportare a rezultatelor educaționale", "utilizează instrumente standardizate de evaluare internă", "organizează sesiuni de analiză a datelor cu echipa și elaborează planuri de îmbunătățire", "coordonează comisii și activități de evaluare internă", "monitorizează implementarea măsurilor corective și ajustează planurile", "elaborează rapoarte de autoevaluare și le aduce la cunoștința comunității"]], ["3.2", "Responsabilitate publică și relaționare instituțională", ["comunică public, cu regularitate, informații privind rezultatele, resursele și deciziile instituționale", "asigură o comunicare activă, proactivă și transparentă cu actorii ecosistemului educațional", "consolidează încrederea în instituție prin transparență și responsabilitate publică"]], ["3.3", "Managementul incluziunii și al diversității în profilurile de învățare", ["gestionează diversitatea culturală, lingvistică și socio-economică a comunității școlare", "implementează măsuri de echitate educațională și previne orice formă de discriminare", "promovează egalitatea de șanse și valorizează diversitatea ca resursă instituțională", "monitorizează impactul măsurilor de incluziune asupra participării și rezultatelor elevilor", "colaborează cu instituții de suport pentru elevii vulnerabili"]], ["3.4", "Colectarea datelor, analiza și formularea de strategii de îmbunătățire a calității", ["colectează și analizează date relevante privind performanța școlii", "derulează analize de nevoi și studii de satisfacție", "utilizează indicatori statistici relevanți pentru decizii privind curriculumul, evaluarea și dezvoltarea profesională", "formulează strategii de îmbunătățire a calității bazate pe evidențe", "organizează sesiuni de analiză și reflecție cu echipa pe baza datelor colectate"]]]}, {"id": 4, "title": "Managementul curriculumului, al proceselor de învățare și evaluare, dezvoltarea profesională a cadrelor didactice", "general": "Asigură coerența curriculară la nivel instituțional și susține dezvoltarea profesională a cadrelor didactice, în vederea îmbunătățirii calității actului didactic și progresului elevilor.", "competencies": [["4.1", "Managementul resurselor umane", ["elaborează și implementează planuri de formare continuă corelate cu prioritățile strategice", "sprijină cadrele didactice debutante și facilitează inserția lor profesională prin mentorat și coaching", "utilizează tehnici de motivare a personalului didactic și administrativ", "distribuie responsabilitățile în mod echilibrat și transparent", "creează oportunități pentru dezvoltarea competențelor digitale ale personalului", "gestionează cu profesionalism procedurile disciplinare atunci când este necesar", "monitorizează nivelul de satisfacție și implicare al personalului"]], ["4.2", "Managementul implementării curriculumului și al proceselor de evaluare", ["coordonează elaborarea și implementarea curriculumului, inclusiv a curriculumului la decizia elevului din oferta școlii", "asigură coerența verticală și orizontală a curriculumului la nivelul unității", "verifică alinierea planificărilor didactice la curriculum și oferă feedback constructiv", "monitorizează calitatea procesului didactic prin observări de lecții, analiză documentară și discuții profesionale", "monitorizează coerența și echitatea evaluării la nivel instituțional", "încurajează utilizarea evaluării formative ca instrument de îmbunătățire a învățării", "corelează datele privind rezultatele elevilor cu deciziile curriculare și de îmbunătățire", "facilitează întâlniri metodice și comunități profesionale de învățare"]], ["4.3", "Cercetare, inovație pedagogică și conceptualizare strategică", ["promovează inovația pedagogică și utilizarea metodelor activ-participative centrate pe elev", "facilitează participarea cadrelor didactice în proiecte educaționale, cercetare-acțiune și schimb de bune practici", "utilizează datele și indicatorii educaționali pentru îmbunătățirea demersurilor curriculare", "susține procesele de mentorat, coaching și observare inter pares", "facilitează accesul cadrelor didactice la programe de dezvoltare profesională relevante și de calitate"]], ["4.4", "Asigurarea succesului școlar al elevilor și a performanței cadrelor didactice", ["elaborează planuri individuale de dezvoltare profesională corelate cu nevoile identificate", "monitorizează impactul formării continue asupra practicii didactice și a rezultatelor elevilor", "asigură responsabilizarea cadrelor didactice cu privire la impactul practicilor pedagogice asupra succesului elevilor", "valorifică expertiza internă a personalului în procesele de formare și mentorat colegial", "promovează o cultură a învățării organizaționale și a comunităților de practică profesională"]]]}, {"id": 5, "title": "Comunicare, relaționare, parteneriate și colaborare în comunitate", "general": "Asigură un climat instituțional sigur, incluziv și participativ prin comunicare strategică, gestionarea relațiilor, dezvoltarea parteneriatelor, atragerea de resurse și stimularea inovației.", "competencies": [["5.1", "Relaționare, comunicare și gestionarea conflictelor", ["formulează mesaje verbale și scrise clare, coerente și adaptate interlocutorului", "utilizează tehnici de ascultare activă și empatie în relațiile cu membrii comunității școlare", "comunică deciziile instituționale în mod transparent, clar și la timp", "organizează consultări periodice cu profesori, părinți și elevi pe teme relevante", "mediază conflictele cu calm, diplomație și imparțialitate"]], ["5.2", "Participarea la rețele și proiecte naționale și internaționale", ["valorifică oportunitățile programului Erasmus+ pentru întărirea dimensiunii europene a școlii", "participă și implică școala în proiecte de tip eTwinning, Școală Europeană și altele similare", "facilitează și stimulează participarea cadrelor didactice în proiecte de mobilități și parteneriate strategice", "creează și întreține rețele de colaborare interinstituțională"]], ["5.3", "Antreprenoriat educațional și inovație", ["influențează organizația în direcția atingerii obiectivelor strategice asumate", "dezvoltă inițiative pentru valorificarea resurselor de infrastructură și a capacității umane a instituției", "asigură participarea și implicarea factorilor interesați în adresarea provocărilor specifice", "introduce soluții inovatoare validate și evaluează impactul lor asupra rezultatelor elevilor", "promovează cultura experimentării responsabile și a îmbunătățirii continue", "reprezintă public instituția într-un mod coerent, profesionist și convingător"]], ["5.4", "Atragerea de resurse extrabugetare", ["identifică surse de finanțare extrabugetară și inițiază aplicații de proiect relevante pentru nevoile școlii", "captează resurse financiare și materiale din comunitate, activând sectorul privat și neguvernamental", "utilizează tehnici de negociere și mediere în gestionarea parteneriatelor", "asigură coerența dintre obiectivele instituționale și activitățile de fundraising", "coordonează implementarea proiectelor externe și asigură continuitatea după finalizarea finanțării", "menține legătura cu comunitatea și promovează imaginea instituției la nivel local și regional", "încurajează participarea comunității în proiecte educaționale"]]]}], "values": ["Interesul superior al elevului", "Echitate, incluziune și justiție socială", "Leadership pedagogic și cultura învățării", "Etică și integritate profesională", "Inițiativă și antreprenoriat", "Parteneriat cu familia și comunitatea"], "transversal": ["Gândire critică, analitică și sistemică", "Raționament strategic și capacitate decizională", "Competențe de analiză cantitativă și utilizare a datelor", "Competențe digitale funcționale și strategice", "Competențe lingvistice și de comunicare profesională", "Inteligență emoțională, autoreglare și maturitate relațională", "Capacitate de adaptare și învățare continuă"], "quiz": [{"q": "Profilul profesional al managerului școlar este organizat pe câte domenii de competență?", "a": ["3", "5", "7", "10"], "c": 1}, {"q": "Care dintre următoarele este o valoare fundamentală a profilului?", "a": ["Interesul superior al elevului", "Competiția între profesori", "Centralizarea deciziei", "Standardizarea absolută"], "c": 0}, {"q": "În ce competență specifică apare utilizarea ciclurilor PDCA?", "a": ["1.1 Managementul schimbării", "2.2 Managementul riscului", "3.1 Evaluare internă", "5.4 Resurse extrabugetare"], "c": 0}, {"q": "Managementul riscului este inclus în domeniul:", "a": ["1", "2", "4", "5"], "c": 1}, {"q": "Standardele ARACIP apar explicit în:", "a": ["3.1 Monitorizare, evaluare internă și raportare", "1.4 Aderarea la principii și valori", "4.1 Managementul resurselor umane", "5.2 Rețele și proiecte"], "c": 0}, {"q": "În managementul curriculumului este încurajată:", "a": ["Evaluarea formativă", "Doar evaluarea sumativă", "Eliminarea feedbackului", "Separarea completă a disciplinelor"], "c": 0}, {"q": "Erasmus+ și eTwinning apar în competența:", "a": ["2.3", "3.4", "5.2", "5.4"], "c": 2}, {"q": "Atragerea de resurse extrabugetare este competența:", "a": ["4.4", "5.4", "2.4", "3.4"], "c": 1}, {"q": "Ce trebuie să fundamenteze deciziile privind elevii?", "a": ["Interesul superior al copilului", "Imaginea instituției", "Conveniența administrativă", "Preferința majorității"], "c": 0}, {"q": "Comunicarea deciziilor instituționale trebuie să fie:", "a": ["Transparentă, clară și la timp", "Doar verbală", "Restricționată", "Informală"], "c": 0}]};
+const app = document.getElementById("app");
+const side = document.getElementById("side");
+const KEY="profil_manager_done_v2";
+let done=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"));
+const lessons=()=>DATA.domains.flatMap(d=>d.competencies.map(c=>({domain:d.id,code:c[0],title:c[1],desc:c[2]})));
+
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function progress(){
+  const n=lessons().length,p=Math.round(done.size/n*100);
+  document.getElementById("ptxt").textContent=`${done.size}/${n} • ${p}%`;
+  document.getElementById("pbar").style.width=p+"%";
+}
+function active(page){document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));}
+function go(page){active(page); side.classList.remove("open"); render(page); window.scrollTo(0,0);}
+function speak(text,btn){
+  if(!("speechSynthesis" in window)){alert("Browserul nu oferă sinteză vocală.");return;}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text); u.lang="ro-RO"; u.rate=.9;
+  const voices=speechSynthesis.getVoices(); const ro=voices.find(v=>v.lang && v.lang.toLowerCase().startsWith("ro")); if(ro)u.voice=ro;
+  btn.textContent="⏹ Oprește";
+  u.onend=()=>btn.textContent="🔊 Ascultă";
+  btn.onclick=()=>{speechSynthesis.cancel();btn.textContent="🔊 Ascultă";attachActions();};
+  speechSynthesis.speak(u);
+}
+function home(){
+ app.innerHTML=`<section class="hero"><div class="kicker">PLATFORMĂ DE STUDIU</div><h1>Profilul profesional al managerului școlar</h1>
+ <p>Parcurge structurat cele 5 domenii de competență și cele 20 de competențe specifice. Ascultă fiecare lecție, fixează descriptorii comportamentali, marchează progresul și verifică-te prin test.</p>
+ <div class="actions"><button class="btn primary" onclick="go('d1')">Începe cu Domeniul 1</button><button class="btn" onclick="go('map')">Vezi harta completă</button></div></section>
+ <h2>Cele 5 domenii de competență</h2><div class="grid">${DATA.domains.map(d=>`<article class="card"><div class="num">0${d.id}</div><h3>${esc(d.title)}</h3><p>${esc(d.general)}</p><button class="btn" onclick="go('d${d.id}')">Deschide domeniul</button></article>`).join("")}</div>
+ <div class="note">Material de studiu realizat pe baza documentului oficial. Pentru citare sau aplicare juridică/administrativă, se consultă actul normativ în forma oficială.</div>`;
+}
+function simple(title,intro,items,remember){
+ app.innerHTML=`<h1>${esc(title)}</h1><div class="card full"><p>${esc(intro)}</p>${items?`<div class="pills">${items.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}</div>`:""}${remember?`<div class="callout"><b>Reține:</b> ${esc(remember)}</div>`:""}</div>`;
+}
+function domain(id){
+ const d=DATA.domains.find(x=>x.id===id);
+ app.innerHTML=`<h1>${id}. ${esc(d.title)}</h1><div class="callout"><b>Competența generală:</b> ${esc(d.general)}</div>`+
+ d.competencies.map(c=>`<article class="lesson"><div class="lessonhead"><div><h3>${esc(c[0])}. ${esc(c[1])}</h3><div class="muted">Descriptori comportamentali</div></div><span class="pill">${c[2].length} descriptori</span></div>
+ <ol>${c[2].map(x=>`<li>${esc(x)}</li>`).join("")}</ol><div class="lessonactions">
+ <button class="btn audio" data-code="${esc(c[0])}">🔊 Ascultă</button>
+ <button class="btn mark ${done.has(c[0])?"done":""}" data-code="${esc(c[0])}">${done.has(c[0])?"✓ Învățat":"Marchează ca învățat"}</button></div></article>`).join("");
+ attachActions();
+}
+function attachActions(){
+ document.querySelectorAll(".mark").forEach(b=>b.onclick=()=>{
+   if(done.has(b.dataset.code))done.delete(b.dataset.code);else done.add(b.dataset.code);
+   localStorage.setItem(KEY,JSON.stringify([...done])); progress();
+   b.classList.toggle("done",done.has(b.dataset.code)); b.textContent=done.has(b.dataset.code)?"✓ Învățat":"Marchează ca învățat";
+ });
+ document.querySelectorAll(".audio").forEach(b=>b.onclick=()=>{
+   const c=lessons().find(x=>x.code===b.dataset.code);
+   speak(`${c.code}. ${c.title}. Descriptori comportamentali. ${c.desc.join(". ")}`,b);
+ });
+}
+function map(){
+ app.innerHTML=`<h1>Harta profilului</h1><p class="muted">Cele 5 domenii și cele 20 de competențe specifice, într-o singură vedere.</p><div style="overflow:auto"><table><thead><tr><th>Domeniu</th><th>Competență generală</th><th>Competențe specifice</th></tr></thead><tbody>${DATA.domains.map(d=>`<tr><td><b>${d.id}. ${esc(d.title)}</b></td><td>${esc(d.general)}</td><td>${d.competencies.map(c=>`<div><b>${esc(c[0])}</b> ${esc(c[1])}</div>`).join("")}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function review(){
+ app.innerHTML=`<h1>Recapitulare rapidă</h1><p class="muted">Titlurile celor 20 de competențe și ideile-cheie pentru fixare.</p><div class="grid">${DATA.domains.flatMap(d=>d.competencies.map(c=>`<article class="card wide"><div class="num">${esc(c[0])}</div><h3>${esc(c[1])}</h3><p>${esc(c[2].slice(0,2).join("; "))}.</p></article>`)).join("")}</div>`;
+}
+function quiz(){
+ let score=0,answered=0;
+ app.innerHTML=`<h1>Test final</h1><p class="muted">10 întrebări de verificare. Rezultatul apare după ultimul răspuns.</p><div id="qw"></div>`;
+ const qw=document.getElementById("qw");
+ DATA.quiz.forEach((q,i)=>{
+  const box=document.createElement("div");box.className="qbox";
+  box.innerHTML=`<b>${i+1}. ${esc(q.q)}</b><div>${q.a.map((a,j)=>`<button class="option" data-i="${j}">${esc(a)}</button>`).join("")}</div>`;
+  box.querySelectorAll(".option").forEach(btn=>btn.onclick=()=>{
+    if(box.dataset.answered)return;box.dataset.answered="1";answered++;
+    const j=Number(btn.dataset.i);
+    box.querySelectorAll(".option").forEach((x,k)=>{if(k===q.c)x.classList.add("ok");});
+    if(j===q.c)score++;else btn.classList.add("bad");
+    if(answered===DATA.quiz.length){
+      const r=document.createElement("div");r.className="qbox";
+      r.innerHTML=`<div class="score">${score}/10</div><p>${score>=9?"Excelent.":score>=7?"Foarte bine. Reia doar punctele unde ai ezitat.":"Reia domeniile înainte de o nouă testare."}</p><button class="btn primary" onclick="go('quiz')">Reia testul</button>`;
+      qw.appendChild(r);
+    }
+  });
+  qw.appendChild(box);
+ });
+}
+function render(page){
+ if(page==="home")home();
+ else if(page==="context")simple("Context","Profilul profesional al managerului școlar descrie așteptările față de managerul școlar în termeni de competențe și atribuie directorului un rol profesionalizat, bazat pe competențe demonstrabile și impact măsurabil.",null,"Directorul este lider pedagogic, strategic și organizațional, cu responsabilitate integrată pentru funcționarea, dezvoltarea și performanța instituției.");
+ else if(page==="values")simple("Valori fundamentale","Reperele etice și principiile care orientează exercitarea rolului managerului școlar.",DATA.values,"Valorile trebuie să fie vizibile în decizii, relații și conduită profesională.");
+ else if(page==="transversal")simple("Competențe transversale","Precondiții cognitive, relaționale și profesionale necesare exercitării rolului de director.",DATA.transversal,"Competențele transversale susțin toate cele 5 domenii ale profilului.");
+ else if(/^d[1-5]$/.test(page))domain(Number(page[1]));
+ else if(page==="map")map();
+ else if(page==="review")review();
+ else if(page==="quiz")quiz();
+}
+document.querySelectorAll(".navbtn").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+document.getElementById("menu").addEventListener("click",()=>side.classList.toggle("open"));
+progress();render("home");
+</script>
+</body>
+</html>
