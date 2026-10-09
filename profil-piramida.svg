@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+<defs>
+  <linearGradient id="g1" x1="0" x2="1"><stop stop-color="#ffcb4c"/><stop offset="1" stop-color="#f4a62a"/></linearGradient>
+  <linearGradient id="g2" x1="0" x2="1"><stop stop-color="#8be66b"/><stop offset="1" stop-color="#44b84f"/></linearGradient>
+  <linearGradient id="g3" x1="0" x2="1"><stop stop-color="#69c7ff"/><stop offset="1" stop-color="#2989d8"/></linearGradient>
+  <linearGradient id="g4" x1="0" x2="1"><stop stop-color="#b968ff"/><stop offset="1" stop-color="#6d2bc8"/></linearGradient>
+  <style>
+    .t{font-family:Segoe UI,Arial,sans-serif;fill:#102a43}.w{fill:white}.h{font-weight:800}.s{font-size:24px}.m{font-size:30px}.l{font-size:40px}
+  </style>
+</defs>
+<rect width="1200" height="1500" fill="#f7fbff"/>
+<rect x="90" y="35" width="1020" height="110" rx="30" fill="#173d69"/>
+<text x="600" y="82" class="w h l" text-anchor="middle">PROFILUL PROFESIONAL</text>
+<text x="600" y="126" class="w h l" text-anchor="middle">AL MANAGERULUI ȘCOLAR</text>
+<text x="600" y="172" class="t h m" text-anchor="middle">schemă vizuală pentru memorare rapidă</text>
+
+<!-- functional -->
+<polygon points="600,215 470,420 730,420" fill="url(#g4)" stroke="#5720a3" stroke-width="5"/>
+<text x="600" y="287" class="w h m" text-anchor="middle">NIVEL FUNCȚIONAL</text>
+<text x="600" y="325" class="w s" text-anchor="middle">aplicarea în practică</text>
+<text x="600" y="365" class="w s" text-anchor="middle">planifică · coordonează</text>
+<text x="600" y="396" class="w s" text-anchor="middle">monitorizează · îmbunătățește</text>
+
+<!-- professional -->
+<polygon points="425,440 775,440 975,790 225,790" fill="url(#g3)" stroke="#176ca8" stroke-width="5"/>
+<text x="600" y="490" class="w h m" text-anchor="middle">NIVEL PROFESIONAL · 5 DOMENII</text>
+<g class="w s" text-anchor="middle">
+<rect x="260" y="525" width="125" height="215" rx="16" fill="#ffffff" opacity=".94"/><text x="322" y="565" class="t h s">1</text><text x="322" y="603" class="t s">Leadership</text><text x="322" y="636" class="t s">și strategie</text><text x="322" y="684" class="t" font-size="20">direcție</text><text x="322" y="711" class="t" font-size="20">și viziune</text>
+<rect x="400" y="525" width="125" height="215" rx="16" fill="#ffffff" opacity=".94"/><text x="462" y="565" class="t h s">2</text><text x="462" y="603" class="t s">Operațional</text><text x="462" y="636" class="t s">și financiar</text><text x="462" y="684" class="t" font-size="20">ordine</text><text x="462" y="711" class="t" font-size="20">și funcționare</text>
+<rect x="540" y="525" width="125" height="215" rx="16" fill="#ffffff" opacity=".94"/><text x="602" y="565" class="t h s">3</text><text x="602" y="603" class="t s">Calitate</text><text x="602" y="636" class="t s">și evaluare</text><text x="602" y="684" class="t" font-size="20">verifică</text><text x="602" y="711" class="t" font-size="20">și îmbunătățește</text>
+<rect x="680" y="525" width="125" height="215" rx="16" fill="#ffffff" opacity=".94"/><text x="742" y="565" class="t h s">4</text><text x="742" y="603" class="t s">Curriculum</text><text x="742" y="636" class="t s">și profesori</text><text x="742" y="684" class="t" font-size="20">predare</text><text x="742" y="711" class="t" font-size="20">și progres</text>
+<rect x="820" y="525" width="125" height="215" rx="16" fill="#ffffff" opacity=".94"/><text x="882" y="565" class="t h s">5</text><text x="882" y="603" class="t s">Comunicare</text><text x="882" y="636" class="t s">și comunitate</text><text x="882" y="684" class="t" font-size="20">oameni</text><text x="882" y="711" class="t" font-size="20">și parteneriate</text>
+</g>
+
+<!-- transversal -->
+<polygon points="210,810 990,810 1080,1120 120,1120" fill="url(#g2)" stroke="#2c9639" stroke-width="5"/>
+<text x="600" y="860" class="w h m" text-anchor="middle">NIVEL TRANSVERSAL · 7 COMPETENȚE</text>
+<g class="t" text-anchor="middle">
+<rect x="155" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="215" y="938" class="h s">1</text><text x="215" y="975" font-size="18">Gândire</text><text x="215" y="1002" font-size="18">critică</text><text x="215" y="1029" font-size="18">și sistemică</text>
+<rect x="290" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="350" y="938" class="h s">2</text><text x="350" y="975" font-size="18">Raționament</text><text x="350" y="1002" font-size="18">strategic</text><text x="350" y="1029" font-size="18">și decizie</text>
+<rect x="425" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="485" y="938" class="h s">3</text><text x="485" y="975" font-size="18">Analiză</text><text x="485" y="1002" font-size="18">cantitativă</text><text x="485" y="1029" font-size="18">și date</text>
+<rect x="560" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="620" y="938" class="h s">4</text><text x="620" y="975" font-size="18">Competențe</text><text x="620" y="1002" font-size="18">digitale</text><text x="620" y="1029" font-size="18">strategice</text>
+<rect x="695" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="755" y="938" class="h s">5</text><text x="755" y="975" font-size="18">Comunicare</text><text x="755" y="1002" font-size="18">profesională</text><text x="755" y="1029" font-size="18">și limbaj</text>
+<rect x="830" y="900" width="120" height="160" rx="15" fill="white" opacity=".94"/><text x="890" y="938" class="h s">6</text><text x="890" y="975" font-size="18">Inteligență</text><text x="890" y="1002" font-size="18">emoțională</text><text x="890" y="1029" font-size="18">autoreglare</text>
+<rect x="965" y="900" width="90" height="160" rx="15" fill="white" opacity=".94"/><text x="1010" y="938" class="h s">7</text><text x="1010" y="975" font-size="17">Adaptare</text><text x="1010" y="1002" font-size="17">și învățare</text><text x="1010" y="1029" font-size="17">continuă</text>
+</g>
+
+<!-- axiologic -->
+<polygon points="105,1140 1095,1140 1160,1400 40,1400" fill="url(#g1)" stroke="#d89418" stroke-width="5"/>
+<text x="600" y="1190" class="t h m" text-anchor="middle">NIVEL AXIOLOGIC · 6 VALORI FUNDAMENTALE</text>
+<g class="t" text-anchor="middle">
+<rect x="80" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="162" y="1270" class="h" font-size="19">Interesul superior</text><text x="162" y="1298" font-size="18">al elevului</text>
+<rect x="260" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="342" y="1270" class="h" font-size="19">Echitate și</text><text x="342" y="1298" font-size="18">incluziune</text>
+<rect x="440" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="522" y="1270" class="h" font-size="19">Leadership</text><text x="522" y="1298" font-size="18">pedagogic</text>
+<rect x="620" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="702" y="1270" class="h" font-size="19">Etică și</text><text x="702" y="1298" font-size="18">integritate</text>
+<rect x="800" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="882" y="1270" class="h" font-size="19">Inițiativă și</text><text x="882" y="1298" font-size="18">antreprenoriat</text>
+<rect x="980" y="1235" width="165" height="110" rx="15" fill="white" opacity=".94"/><text x="1062" y="1270" class="h" font-size="19">Familie și</text><text x="1062" y="1298" font-size="18">comunitate</text>
+</g>
+
+<text x="600" y="1450" class="t h s" text-anchor="middle">Memorează de jos în sus: VALORI → COMPETENȚE TRANSVERSALE → 5 DOMENII → APLICARE</text>
+</svg>
