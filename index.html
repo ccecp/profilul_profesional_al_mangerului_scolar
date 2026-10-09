@@ -18,7 +18,7 @@ main{padding:25px;max-width:1250px;width:100%;margin:auto} .progressbox{backgrou
 .actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px} .btn{border:1px solid var(--line);border-radius:9px;padding:10px 14px;cursor:pointer;background:#fff;color:var(--blue);font-weight:700} .btn.primary{background:var(--gold);border-color:var(--gold);color:#1c2733} .btn.done{background:var(--green);border-color:var(--green);color:#fff}
 h1{line-height:1.15} h2{margin-top:28px} .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px} .card{grid-column:span 4;background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow)} .card.wide{grid-column:span 6} .card.full{grid-column:1/-1} .card p,.muted{color:var(--muted);line-height:1.55} .num{font-size:33px;color:var(--gold);font-weight:900}
 .callout{background:var(--soft);border-left:4px solid var(--gold);border-radius:8px;padding:14px 16px;line-height:1.55;margin:14px 0} .pills{display:flex;flex-wrap:wrap;gap:7px} .pill{font-size:13px;background:var(--soft);border-radius:99px;padding:7px 10px}
-.lesson{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:var(--shadow)} .lessonhead{display:flex;justify-content:space-between;gap:15px;align-items:start} .lesson h3{margin:0 0 7px} .lesson ol{padding-left:22px} .lesson li{margin:7px 0;line-height:1.48} .lessonactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.lesson{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;margin:8px 0;box-shadow:0 5px 16px rgba(27,55,86,.06);transition:.2s} .lesson.playing{border:2px solid var(--gold);box-shadow:0 10px 28px rgba(228,170,72,.20);transform:translateY(-1px)} .lessonhead{display:flex;justify-content:space-between;gap:15px;align-items:start} .lesson h3{margin:0 0 7px} .lesson ol{padding-left:22px} .lesson li{margin:7px 0;line-height:1.48} .lessonactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.domain-audio{position:sticky;top:67px;z-index:20;background:#f8fbff;border:1px solid var(--line);border-radius:13px;padding:10px 12px;margin:8px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.domain-audio .status{font-size:13px;color:var(--muted);font-weight:700}.btn.audioall{background:var(--blue);border-color:var(--blue);color:#fff}
 table{border-collapse:collapse;width:100%;background:#fff} th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top} th{background:var(--soft)}
 .qbox{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;margin:13px 0} .option{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px;margin:7px 0;cursor:pointer} .option.ok{background:#e9f5ee;border-color:var(--green)} .option.bad{background:#faeded;border-color:var(--red)} .score{font-size:30px;font-weight:900;color:var(--blue)}
 .menu{display:none;position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;border:0;border-radius:50%;background:var(--blue);color:#fff;font-size:22px} .note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:28px}
@@ -62,6 +62,9 @@ const app = document.getElementById("app");
 const side = document.getElementById("side");
 const KEY="profil_manager_done_v2";
 let done=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"));
+let audioQueue=false;
+let audioIndex=-1;
+let currentUtterance=null;
 const lessons=()=>DATA.domains.flatMap(d=>d.competencies.map(c=>({domain:d.id,code:c[0],title:c[1],desc:c[2]})));
 
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
@@ -71,17 +74,64 @@ function progress(){
   document.getElementById("pbar").style.width=p+"%";
 }
 function active(page){document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));}
-function go(page){active(page); side.classList.remove("open"); render(page); window.scrollTo(0,0);}
-function speak(text,btn){
+function go(page){if(audioQueue||currentUtterance)stopAudio();active(page); side.classList.remove("open"); render(page); window.scrollTo(0,0);}
+function stopAudio(){
+  audioQueue=false;
+  audioIndex=-1;
+  currentUtterance=null;
+  if("speechSynthesis" in window) speechSynthesis.cancel();
+  document.querySelectorAll(".lesson.playing").forEach(x=>x.classList.remove("playing"));
+  const st=document.getElementById("audio-status"); if(st)st.textContent="Redarea este oprită.";
+  document.querySelectorAll(".audioall").forEach(b=>b.textContent="▶ Ascultă continuu");
+}
+function voiceRO(){
+  const vs=speechSynthesis.getVoices();
+  return vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith("ro"))||null;
+}
+function focusLesson(code){
+  document.querySelectorAll(".lesson.playing").forEach(x=>x.classList.remove("playing"));
+  const el=document.querySelector('.lesson[data-code="'+code+'"]');
+  if(el){el.classList.add("playing");setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"center"}),80);}
+}
+function speakLesson(index,continuous){
   if(!("speechSynthesis" in window)){alert("Browserul nu oferă sinteză vocală.");return;}
+  const all=lessons();
+  if(index<0||index>=all.length){stopAudio();return;}
+  const item=all[index];
+  audioIndex=index; audioQueue=!!continuous;
+  const neededPage="d"+item.domain;
+  const activeBtn=document.querySelector('.navbtn.active');
+  if(!activeBtn||activeBtn.dataset.page!==neededPage){
+    active(neededPage); side.classList.remove("open"); domain(item.domain);
+  }
+  focusLesson(item.code);
+  const st=document.getElementById("audio-status");
+  if(st)st.textContent="Se citește: "+item.code+" · "+item.title;
+  const text=item.code+". "+item.title+". Descriptori comportamentali. "+item.desc.join(". ");
   speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(text); u.lang="ro-RO"; u.rate=.9;
-  const voices=speechSynthesis.getVoices(); const ro=voices.find(v=>v.lang && v.lang.toLowerCase().startsWith("ro")); if(ro)u.voice=ro;
-  btn.textContent="⏹ Oprește";
-  u.onend=()=>btn.textContent="🔊 Ascultă";
-  btn.onclick=()=>{speechSynthesis.cancel();btn.textContent="🔊 Ascultă";attachActions();};
+  const u=new SpeechSynthesisUtterance(text);
+  currentUtterance=u; u.lang="ro-RO"; u.rate=.9;
+  const ro=voiceRO(); if(ro)u.voice=ro;
+  u.onend=()=>{
+    currentUtterance=null;
+    if(audioQueue){
+      const next=index+1;
+      if(next<all.length){setTimeout(()=>speakLesson(next,true),220);}
+      else{stopAudio();const s=document.getElementById("audio-status");if(s)s.textContent="Ai parcurs toate cele 20 de competențe.";}
+    }else{
+      document.querySelectorAll(".lesson.playing").forEach(x=>x.classList.remove("playing"));
+      if(st)st.textContent="Audio încheiat.";
+    }
+  };
   speechSynthesis.speak(u);
 }
+function startContinuousFromDomain(id){
+  if(audioQueue){stopAudio();return;}
+  const all=lessons();
+  const idx=all.findIndex(x=>x.domain===id);
+  if(idx>=0){audioQueue=true;document.querySelectorAll(".audioall").forEach(b=>b.textContent="⏹ Oprește redarea");speakLesson(idx,true);}
+}
+
 function home(){
  app.innerHTML=`<section class="hero"><div class="kicker">PLATFORMĂ DE STUDIU</div><h1>Profilul profesional al managerului școlar</h1>
  <p>Parcurge structurat cele 5 domenii de competență și cele 20 de competențe specifice. Ascultă fiecare lecție, fixează descriptorii comportamentali, marchează progresul și verifică-te prin test.</p>
@@ -94,12 +144,14 @@ function simple(title,intro,items,remember){
 }
 function domain(id){
  const d=DATA.domains.find(x=>x.id===id);
- app.innerHTML=`<h1>${id}. ${esc(d.title)}</h1><div class="callout"><b>Competența generală:</b> ${esc(d.general)}</div>`+
- d.competencies.map(c=>`<article class="lesson"><div class="lessonhead"><div><h3>${esc(c[0])}. ${esc(c[1])}</h3><div class="muted">Descriptori comportamentali</div></div><span class="pill">${c[2].length} descriptori</span></div>
+ app.innerHTML=`<h1 style="margin-bottom:10px">${id}. ${esc(d.title)}</h1><div class="callout" style="margin:8px 0 10px"><b>Competența generală:</b> ${esc(d.general)}</div>
+ <div class="domain-audio"><div><b>🎧 Învățare continuă</b><div class="status" id="audio-status">Pornește de aici, iar textul următor va veni automat în față.</div></div><div style="display:flex;gap:7px"><button class="btn audioall" onclick="startContinuousFromDomain(${id})">${audioQueue?"⏹ Oprește redarea":"▶ Ascultă continuu"}</button><button class="btn" onclick="stopAudio()">■ Stop</button></div></div>`+
+ d.competencies.map(c=>`<article class="lesson" data-code="${esc(c[0])}"><div class="lessonhead"><div><h3>${esc(c[0])}. ${esc(c[1])}</h3><div class="muted">Descriptori comportamentali</div></div><span class="pill">${c[2].length} descriptori</span></div>
  <ol>${c[2].map(x=>`<li>${esc(x)}</li>`).join("")}</ol><div class="lessonactions">
- <button class="btn audio" data-code="${esc(c[0])}">🔊 Ascultă</button>
+ <button class="btn audio" data-code="${esc(c[0])}">🔊 Ascultă doar această parte</button>
  <button class="btn mark ${done.has(c[0])?"done":""}" data-code="${esc(c[0])}">${done.has(c[0])?"✓ Învățat":"Marchează ca învățat"}</button></div></article>`).join("");
  attachActions();
+ if(audioIndex>=0&&lessons()[audioIndex]&&lessons()[audioIndex].domain===id) setTimeout(()=>focusLesson(lessons()[audioIndex].code),100);
 }
 function attachActions(){
  document.querySelectorAll(".mark").forEach(b=>b.onclick=()=>{
@@ -108,8 +160,9 @@ function attachActions(){
    b.classList.toggle("done",done.has(b.dataset.code)); b.textContent=done.has(b.dataset.code)?"✓ Învățat":"Marchează ca învățat";
  });
  document.querySelectorAll(".audio").forEach(b=>b.onclick=()=>{
-   const c=lessons().find(x=>x.code===b.dataset.code);
-   speak(`${c.code}. ${c.title}. Descriptori comportamentali. ${c.desc.join(". ")}`,b);
+   audioQueue=false;
+   const idx=lessons().findIndex(x=>x.code===b.dataset.code);
+   if(idx>=0)speakLesson(idx,false);
  });
 }
 function map(){
